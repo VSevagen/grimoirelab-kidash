@@ -31,6 +31,7 @@ import unittest
 sys.path.insert(0, '..')
 
 from kidash.kidash import export_dashboard_files
+from kidash.kidash import ElasticSearch
 
 OVERVIEW_DASH_FILE = 'data/overview-with-index-patterns.json'
 
@@ -56,7 +57,6 @@ class TestReport(unittest.TestCase):
             self.assertTrue(set(os.listdir(tmpdir)) == set([dashboard_file] + index_patterns_files))
 
         shutil.rmtree(tmpdir)
-
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
